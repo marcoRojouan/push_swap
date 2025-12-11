@@ -1,0 +1,13 @@
+{
+	"files.associations": {
+		"stdlib.h": "c",
+		"pswap.h": "c",
+		"array": "c",
+		"string_view": "c",
+		"format": "c",
+		"initializer_list": "c",
+		"ranges": "c",
+		"span": "c",
+		"unistd.h": "c"
+	}
+}

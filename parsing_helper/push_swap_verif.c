@@ -3,14 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_verif.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:21:04 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:43 by loup             ###   ########.fr       */
+/*   Updated: 2025/12/12 15:32:40 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pswap.h"
+
+int av_is_valid(char **av)
+{
+	int	i;
+	int	j;
+	int is_valid;
+
+	i = 1;
+	while (av[i])
+	{
+		j = 0;
+		is_valid = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] >= '0' && av[i][j] <= '9')
+				is_valid = 1;
+			j++;
+		}
+		if (is_valid == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int	is_non_num(char **args)
 {
@@ -21,7 +45,7 @@ int	is_non_num(char **args)
 	while (args[i])
 	{
 		j = 0;
-		if (args[i][j] == '-')
+		if (args[i][j] == '-' || args[i][j] == '+')
 			j++;
 		while (args[i][j])
 		{

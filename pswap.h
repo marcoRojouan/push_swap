@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pswap.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:00:27 by loup              #+#    #+#             */
-/*   Updated: 2025/12/11 19:37:55 by loup             ###   ########.fr       */
+/*   Updated: 2025/12/12 14:36:19 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		is_sorted(t_stack *stack);
 int		is_valid_data(char **args);
 int		ft_atoi(const char *nptr);
 int		white_space(char c);
+int		av_is_valid(char **av);
 int		*indexing_tab(int *stack_values, int size);
 
 char	**ft_split(char *str);

@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:21:04 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/12 15:32:40 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:31:46 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int av_is_valid(char **av)
 	int is_valid;
 
 	i = 1;
+	
 	while (av[i])
 	{
 		j = 0;
@@ -45,7 +46,7 @@ int	is_non_num(char **args)
 	while (args[i])
 	{
 		j = 0;
-		if (args[i][j] == '-' || args[i][j] == '+')
+		if ((args[i][j] == '-' || args[i][j] == '+' ) && args[i][j + 1] != '\0')
 			j++;
 		while (args[i][j])
 		{
@@ -62,14 +63,16 @@ int	is_doubles(char **args)
 {
 	int	i;
 	int	j;
+	int is_valid;
 
+	is_valid = 1;
 	i = 0;
 	while (args[i])
 	{
 		j = i + 1;
 		while (args[j])
 		{
-			if (ft_atoi(args[i]) == ft_atoi(args[j]))
+			if (ft_atoi(args[i], &is_valid) == ft_atoi(args[j], &is_valid))
 				return (1);
 			j++;
 		}

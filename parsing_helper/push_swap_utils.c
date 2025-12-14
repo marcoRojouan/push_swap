@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:27 by loup              #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:46 by loup             ###   ########.fr       */
+/*   Updated: 2025/12/14 16:36:23 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (tab);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr, int *is_nogood)
 {
 	int	i;
 	int	multi;
 	int	nbr;
+	int tmp;
 
 	i = 0;
 	multi = 1;
@@ -68,15 +69,19 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
+		tmp = nbr * 10 + (nptr[i] - '0');
+		if (tmp < nbr)
+			*is_nogood = 0;
 		nbr = nbr * 10 + (nptr[i] - '0');
 		i++;
 	}
 	return (nbr * multi);
 }
+#include <stdio.h>
 
 int	white_space(char c)
 {
 	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
+		return (1);	
 	return (0);
 }

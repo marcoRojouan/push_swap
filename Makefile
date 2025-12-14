@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: loup <loup@student.42.fr>                  +#+  +:+       +#+         #
+#    By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 19:59:51 by loup              #+#    #+#              #
-#    Updated: 2025/12/11 20:06:04 by loup             ###   ########.fr        #
+#    Updated: 2025/12/14 15:17:10 by mrojouan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 RM			= rm -f
 
 SRCS		= push_swap.c \

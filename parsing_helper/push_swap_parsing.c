@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:15:42 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/12 16:31:33 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:00:51 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ char	**parsing_args(int ac, char **av)
 t_stack	fill_stack(char **args, t_stack stack)
 {
 	int		i; 
+	int		is_nogood;
 	
+	is_nogood = 1;
 	i = 0;
 	while (args[i])
 		i++;
@@ -70,9 +72,15 @@ t_stack	fill_stack(char **args, t_stack stack)
 	i = 0;
 	while (args[i])
 	{
-		stack.values[i] = ft_atoi(args[i]);
+		stack.values[i] = ft_atoi(args[i], &is_nogood);
 		stack.size++;
 		i++;
+	}
+	if (!is_nogood)
+	{
+		write(2, "Error\n", 6);
+		free(stack.values);
+		exit(1);
 	}
 	return (stack);
 }

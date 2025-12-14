@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:00:27 by loup              #+#    #+#             */
-/*   Updated: 2025/12/12 14:36:19 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:25:50 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 
 typedef struct s_stack
 {
@@ -26,7 +27,7 @@ t_stack	push_swap_parsing(int ac, char **av);
 
 int		is_sorted(t_stack *stack);
 int		is_valid_data(char **args);
-int		ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr, int *is_nogood);
 int		white_space(char c);
 int		av_is_valid(char **av);
 int		*indexing_tab(int *stack_values, int size);

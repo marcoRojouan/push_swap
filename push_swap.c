@@ -6,12 +6,11 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:25 by loup              #+#    #+#             */
-/*   Updated: 2025/12/12 16:29:45 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/14 13:08:33 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pswap.h"
-#include <stdio.h>
 
 void push_swap(t_stack *a_stack, t_stack *b_stack)
 {
@@ -35,6 +34,8 @@ int main(int ac, char **av)
 	t_stack a_stack;
 	t_stack	b_stack;
 	
+	if (ac < 2)
+		return (0);
 	a_stack = push_swap_parsing(ac, av);
 	if (!a_stack.values || !a_stack.size)
 		return (0);

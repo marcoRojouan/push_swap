@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:27 by loup              #+#    #+#             */
-/*   Updated: 2025/12/14 16:36:23 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:11:25 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int	ft_atoi(const char *nptr, int *is_nogood)
 	}
 	return (nbr * multi);
 }
-#include <stdio.h>
 
 int	white_space(char c)
 {

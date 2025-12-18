@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:20:55 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:47 by loup             ###   ########.fr       */
+/*   Updated: 2025/12/18 14:53:28 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	count_words(char *str)
 
 	i = 0;
 	count = 0;
+	if (!str || !str[0])
+		return (0);
 	if (!white_space(str[0]))
 	{
 		count += 1;
@@ -79,8 +81,8 @@ int	fill_tab(char *str, char **tab)
 	j = 0;
 	while (str[i])
 	{
-		if ((!white_space(str[i]) && white_space(str[i - 1]))
-			|| (!white_space(str[i]) && !str[i - 1]))
+		if ((i == 0 && !white_space(str[i]))
+			|| (i > 0 && !white_space(str[i]) && white_space(str[i - 1])))
 		{
 			tab[j] = duplicate_wrd(str + i);
 			if (!tab[j])

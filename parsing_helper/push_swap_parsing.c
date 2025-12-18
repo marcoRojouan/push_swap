@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:15:42 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/14 17:00:51 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:31:31 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	**rearrange_args(int ac, char **av)
 	splitted_args = ft_split(joined_args);
 	if (!splitted_args)
 		return (NULL);
+	free(joined_args);
 	return (splitted_args);
 }
 
@@ -45,6 +46,7 @@ char	**parsing_args(int ac, char **av)
 	if (!av_is_valid(av))
 	{
 		write(2, "Error\n", 6);
+
 		return (NULL);
 	}
 	parsed_args = rearrange_args(ac, av);
@@ -53,7 +55,7 @@ char	**parsing_args(int ac, char **av)
 	if (is_valid_data(parsed_args))
 	{
 		write(2, "Error\n", 6);
-		free(parsed_args);
+		free_all(parsed_args);
 		return (NULL);
 	}
 	return (parsed_args);
@@ -62,26 +64,21 @@ char	**parsing_args(int ac, char **av)
 t_stack	fill_stack(char **args, t_stack stack)
 {
 	int		i; 
-	int		is_nogood;
-	
-	is_nogood = 1;
+
 	i = 0;
 	while (args[i])
 		i++;
 	stack.values = malloc(sizeof(int) * i);
+	if (!stack.values)
+		return (stack);
 	i = 0;
 	while (args[i])
 	{
-		stack.values[i] = ft_atoi(args[i], &is_nogood);
+		stack.values[i] = ft_atoi(args[i]);
 		stack.size++;
 		i++;
 	}
-	if (!is_nogood)
-	{
-		write(2, "Error\n", 6);
-		free(stack.values);
-		exit(1);
-	}
+	free_all(args);
 	return (stack);
 }
 

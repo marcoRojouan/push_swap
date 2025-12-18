@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:27 by loup              #+#    #+#             */
-/*   Updated: 2025/12/14 17:11:25 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/15 11:50:01 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,11 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (tab);
 }
 
-int	ft_atoi(const char *nptr, int *is_nogood)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	multi;
 	int	nbr;
-	int tmp;
 
 	i = 0;
 	multi = 1;
@@ -69,9 +68,6 @@ int	ft_atoi(const char *nptr, int *is_nogood)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		tmp = nbr * 10 + (nptr[i] - '0');
-		if (tmp < nbr)
-			*is_nogood = 0;
 		nbr = nbr * 10 + (nptr[i] - '0');
 		i++;
 	}

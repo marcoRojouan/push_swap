@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:25 by loup              #+#    #+#             */
-/*   Updated: 2025/12/14 13:08:33 by mrojouan         ###   ########.fr       */
+/*   Updated: 2025/12/18 14:00:04 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,7 @@ int main(int ac, char **av)
 		return (0);
 	b_stack.size = 0;
 	push_swap(&a_stack, &b_stack);
+	free(a_stack.values);
+	free(b_stack.values);
+	return (0);
 }

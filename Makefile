@@ -6,7 +6,7 @@
 #    By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 19:59:51 by loup              #+#    #+#              #
-#    Updated: 2025/12/14 15:17:10 by mrojouan         ###   ########.fr        #
+#    Updated: 2025/12/18 14:00:48 by mrojouan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME		= push_swap
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
+# -I ./
 RM			= rm -f
 
 SRCS		= push_swap.c \
@@ -25,6 +26,7 @@ SRCS		= push_swap.c \
 			  algo_helper/push_swap_swaps.c \
 			  algo_helper/push_swap_pushs.c \
 			  parsing_helper/push_swap_indexing.c \
+			  parsing_helper/push_swap_verif_bis.c \
 			  parsing_helper/push_swap_parsing.c \
 			  parsing_helper/push_swap_split.c \
 			  parsing_helper/push_swap_utils.c \
@@ -37,16 +39,16 @@ HEADER		= pswap.h
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+			@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o:		%.c $(HEADER)
-			$(CC) $(CFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJS)
+			@$(RM) $(OBJS)
 
 fclean:		clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re:			fclean all
 

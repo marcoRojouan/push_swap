@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:15:42 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/18 15:31:31 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/02 15:59:09 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ t_stack	fill_stack(char **args, t_stack stack)
 		stack.size++;
 		i++;
 	}
-	free_all(args);
 	return (stack);
 }
 
@@ -86,6 +85,7 @@ t_stack	push_swap_parsing(int ac, char **av)
 {
     char	**args;
 	t_stack	stack;
+	int		*tmp;
 
 	stack.values = NULL;
 	stack.size = 0;
@@ -93,6 +93,14 @@ t_stack	push_swap_parsing(int ac, char **av)
 	if (!args)
 		return (stack);
 	stack = fill_stack(args, stack);
+	free_all(args);
+	tmp = stack.values;
 	stack.values = indexing_tab(stack.values, stack.size);
+	free(tmp);
+	if (!stack.values)
+	{
+		stack.size = 0;
+		return (stack);
+	}
 	return (stack);
 }

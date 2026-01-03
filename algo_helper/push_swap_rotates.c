@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_rotates.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:00:48 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:50 by loup             ###   ########.fr       */
+/*   Updated: 2026/01/03 15:21:22 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 void	ra(t_stack *stack, int flag)
 {
@@ -32,7 +32,7 @@ void	ra(t_stack *stack, int flag)
 }
 
 void	rb(t_stack *stack, int flag)
-{	
+{
 	int	tmp;
 	int	i;
 
@@ -52,7 +52,6 @@ void	rb(t_stack *stack, int flag)
 
 void	rr(t_stack *a_stack, t_stack *b_stack)
 {
-	
 	ra(a_stack, 0);
 	rb(b_stack, 0);
 	write(1, "rr\n", 3);

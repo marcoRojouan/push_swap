@@ -6,11 +6,11 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 11:56:57 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/18 13:51:26 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:21:51 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 static int	in_int_range(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:20:55 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/18 14:53:28 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:26:42 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 void	free_all(char **tab)
 {
@@ -25,7 +25,7 @@ void	free_all(char **tab)
 	free(tab);
 }
 
-int	count_words(char *str)
+static int	count_words(char *str)
 {
 	int	i;
 	int	count;
@@ -48,7 +48,7 @@ int	count_words(char *str)
 	return (count);
 }
 
-char	*duplicate_wrd(char *str)
+static char	*duplicate_wrd(char *str)
 {
 	char	*dup;
 	int		word_len;
@@ -72,7 +72,7 @@ char	*duplicate_wrd(char *str)
 	return (dup);
 }
 
-int	fill_tab(char *str, char **tab)
+static int	fill_tab(char *str, char **tab)
 {
 	int	i;
 	int	j;

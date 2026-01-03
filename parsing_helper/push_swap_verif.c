@@ -6,20 +6,19 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:21:04 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/18 13:54:53 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:27:42 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
-int av_is_valid(char **av)
+int	av_is_valid(char **av)
 {
 	int	i;
 	int	j;
-	int is_valid;
+	int	is_valid;
 
 	i = 1;
-	
 	while (av[i])
 	{
 		j = 0;
@@ -37,7 +36,7 @@ int av_is_valid(char **av)
 	return (1);
 }
 
-int	is_non_num(char **args)
+static int	is_non_num(char **args)
 {
 	int	i;
 	int	j;
@@ -59,7 +58,7 @@ int	is_non_num(char **args)
 	return (0);
 }
 
-int	is_doubles(char **args)
+static int	is_doubles(char **args)
 {
 	int	i;
 	int	j;

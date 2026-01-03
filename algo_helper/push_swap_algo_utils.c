@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_algo_utils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 15:33:51 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:53 by loup             ###   ########.fr       */
+/*   Updated: 2026/01/03 15:21:02 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 int	is_sorted(t_stack *stack)
 {
@@ -34,9 +34,9 @@ void	sort_2(t_stack *stack)
 
 void	sort_3(t_stack *stack)
 {
-	int a;
-	int b;	
-	int c;
+	int	a;
+	int	b;	
+	int	c;
 
 	a = stack->values[0];
 	b = stack->values[1];
@@ -66,6 +66,7 @@ void	sort_4(t_stack *a_stack, t_stack *b_stack)
 	sort_3(a_stack);
 	pa(a_stack, b_stack);
 }
+
 void	sort_5(t_stack *a_stack, t_stack *b_stack)
 {
 	move_min(a_stack);
@@ -76,5 +77,5 @@ void	sort_5(t_stack *a_stack, t_stack *b_stack)
 	pa(a_stack, b_stack);
 	pa(a_stack, b_stack);
 	if (a_stack->values[0] > a_stack->values[1])
-        sa(a_stack, 1);
+		sa(a_stack, 1);
 }

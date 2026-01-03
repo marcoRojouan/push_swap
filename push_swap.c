@@ -6,13 +6,13 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:25 by loup              #+#    #+#             */
-/*   Updated: 2026/01/02 14:59:19 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:22:01 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pswap.h"
+#include <push_swap.h>
 
-void push_swap(t_stack *a_stack, t_stack *b_stack)
+void	push_swap(t_stack *a_stack, t_stack *b_stack)
 {
 	if (!is_sorted(a_stack))
 	{
@@ -29,14 +29,11 @@ void push_swap(t_stack *a_stack, t_stack *b_stack)
 	}
 }
 
-#include <stdio.h>
-
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_stack a_stack;
+	t_stack	a_stack;
 	t_stack	b_stack;
-	// int i = 0;
-	
+
 	if (ac < 2)
 		return (0);
 	a_stack = push_swap_parsing(ac, av);
@@ -47,11 +44,6 @@ int main(int ac, char **av)
 		return (0);
 	b_stack.size = 0;
 	push_swap(&a_stack, &b_stack);
-	// while (i < a_stack.size)
-	// {
-	// 	printf("%d", a_stack.values[i]);
-	// 	i++;
-	// }
 	free(a_stack.values);
 	free(b_stack.values);
 	return (0);

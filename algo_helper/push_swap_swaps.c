@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_swaps.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 13:56:37 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:49 by loup             ###   ########.fr       */
+/*   Updated: 2026/01/03 15:21:30 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 void	sa(t_stack *stack, int flag)
-{	
+{
 	int	tmp;
 
 	if (stack->size < 2)
@@ -28,7 +28,7 @@ void	sa(t_stack *stack, int flag)
 void	sb(t_stack *stack, int flag)
 {
 	int	tmp;
-		
+
 	if (stack->size < 2)
 		return ;
 	tmp = stack->values[0];
@@ -39,7 +39,7 @@ void	sb(t_stack *stack, int flag)
 }
 
 void	ss(t_stack *a_stack, t_stack *b_stack)
-{	
+{
 	sa(a_stack, 0);
 	sb(b_stack, 0);
 	write(1, "ss\n", 3);

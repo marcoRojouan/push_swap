@@ -6,15 +6,14 @@
 #    By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 19:59:51 by loup              #+#    #+#              #
-#    Updated: 2025/12/18 14:00:48 by mrojouan         ###   ########.fr        #
+#    Updated: 2026/01/03 15:22:19 by mrojouan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
 
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
-# -I ./
+CFLAGS		= -Wall -Wextra -Werror -g -I ./
 RM			= rm -f
 
 SRCS		= push_swap.c \
@@ -34,7 +33,7 @@ SRCS		= push_swap.c \
 
 OBJS		= $(SRCS:.c=.o)
 
-HEADER		= pswap.h
+HEADER		= push_swap.h
 
 all:		$(NAME)
 

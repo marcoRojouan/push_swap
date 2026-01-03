@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_rrotates.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:56:04 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:50 by loup             ###   ########.fr       */
+/*   Updated: 2026/01/03 15:21:26 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 void	rra(t_stack *stack, int flag)
 {

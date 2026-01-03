@@ -6,13 +6,13 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 14:47:36 by mrojouan          #+#    #+#             */
-/*   Updated: 2026/01/02 15:55:57 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:25:46 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
-int *int_arr_cpy(int *values, int size)
+static int	*int_arr_cpy(int *values, int size)
 {
 	int	*new_tab;
 	int	i;
@@ -29,11 +29,11 @@ int *int_arr_cpy(int *values, int size)
 	return (new_tab);
 }
 
-void ft_bubble_sort(int *tab, int size)
+static void	ft_bubble_sort(int *tab, int size)
 {
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	while (i < size - 1)
@@ -50,9 +50,10 @@ void ft_bubble_sort(int *tab, int size)
 			j++;
 		}
 		i++;
-	} 
+	}
 }
-int make_index(int *sorted_values, int value, int size)
+
+static int	make_index(int *sorted_values, int value, int size)
 {
 	int	i;
 
@@ -68,8 +69,8 @@ int make_index(int *sorted_values, int value, int size)
 
 int	*indexing_tab(int *values, int size)
 {
-	int i;
-	int *sorted_tab;
+	int	i;
+	int	*sorted_tab;
 	int	*indexed_tab;
 
 	sorted_tab = int_arr_cpy(values, size);

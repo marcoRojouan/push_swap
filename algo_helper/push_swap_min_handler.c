@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_min_handler.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loup <loup@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 13:19:20 by mrojouan          #+#    #+#             */
-/*   Updated: 2025/12/11 18:36:52 by loup             ###   ########.fr       */
+/*   Updated: 2026/01/03 15:23:39 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
-int	find_min_index(int *nbrs, int size)
+static int	find_min_index(int *nbrs, int size)
 {
-	int i;
-	int min;
-	int min_index;
+	int	i;
+	int	min;
+	int	min_index;
 
 	i = 1;
 	min = nbrs[0];
@@ -44,9 +44,9 @@ void	move_min(t_stack *stack)
 		{
 			ra(stack, 1);
 			min_index--;
-		}		
+		}
 	}
-	else 
+	else
 	{
 		while (min_index < stack->size)
 		{

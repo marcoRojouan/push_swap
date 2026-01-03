@@ -6,11 +6,11 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:27 by loup              #+#    #+#             */
-/*   Updated: 2025/12/15 11:50:01 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:21:48 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pswap.h"
+#include <push_swap.h>
 
 static int	ft_strlen(char *str)
 {
@@ -77,6 +77,6 @@ int	ft_atoi(const char *nptr)
 int	white_space(char c)
 {
 	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);	
+		return (1);
 	return (0);
 }

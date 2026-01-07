@@ -6,11 +6,53 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:21:04 by mrojouan          #+#    #+#             */
-/*   Updated: 2026/01/03 15:27:42 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/05 11:48:13 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+static int	is_non_num(char **args)
+{
+	int	i;
+	int	j;
+	
+	i = 0;
+	while (args[i])
+	{
+		j = 0;
+		if ((args[i][j] == '-' || args[i][j] == '+' ) && args[i][j + 1] != '\0')
+		j++;
+		while (args[i][j])
+		{
+			if ((args[i][j] < '0' || args[i][j] > '9'))
+			return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+static int	is_doubles(char **args)
+{
+	int	i;
+	int	j;
+	
+	i = 0;
+	while (args[i])
+	{
+		j = i + 1;
+		while (args[j])
+		{
+			if (ft_atoi(args[i]) == ft_atoi(args[j]))
+			return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
 
 int	av_is_valid(char **av)
 {
@@ -34,48 +76,6 @@ int	av_is_valid(char **av)
 		i++;
 	}
 	return (1);
-}
-
-static int	is_non_num(char **args)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (args[i])
-	{
-		j = 0;
-		if ((args[i][j] == '-' || args[i][j] == '+' ) && args[i][j + 1] != '\0')
-			j++;
-		while (args[i][j])
-		{
-			if ((args[i][j] < '0' || args[i][j] > '9'))
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-static int	is_doubles(char **args)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (args[i])
-	{
-		j = i + 1;
-		while (args[j])
-		{
-			if (ft_atoi(args[i]) == ft_atoi(args[j]))
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
 }
 
 int	is_valid_data(char **args)

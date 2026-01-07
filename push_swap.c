@@ -6,13 +6,13 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:56:25 by loup              #+#    #+#             */
-/*   Updated: 2026/01/03 15:22:01 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/05 11:39:20 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	push_swap(t_stack *a_stack, t_stack *b_stack)
+static void	push_swap(t_stack *a_stack, t_stack *b_stack)
 {
 	if (!is_sorted(a_stack))
 	{

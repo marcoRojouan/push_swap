@@ -144,6 +144,8 @@ For Radix Documentation :
 	- "https://en.wikipedia.org/wiki/Radix_sort"
 For Parsing Documentation :
 	- I used the experience i have in Web Development to parse users informations.
+I used AI to search precise documentation and to help me understand some of the concepts
+and to find errors in some of my codes
 
 ## Testing & Validation
 

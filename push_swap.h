@@ -6,7 +6,7 @@
 /*   By: mrojouan <mrojouan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:00:27 by loup              #+#    #+#             */
-/*   Updated: 2026/01/03 15:29:46 by mrojouan         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:05:23 by mrojouan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-t_stack	push_swap_parsing(int ac, char **av);
+void	push_swap_parsing(int ac, char **av, t_stack *stack);
 
 int		is_sorted(t_stack *stack);
 int		is_valid_data(char **args);
